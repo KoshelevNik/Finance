@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ru.finance.my.repository.mapper.TransferMapper">
+
+  <resultMap id="TransferMap" type="ru.finance.my.entity.Transfer">
+    <result column="id" property="id"/>
+    <result column="from_account_id" property="fromAccountId"/>
+    <result column="to_account_id" property="toAccountId"/>
+    <result column="sum" property="sum"/>
+    <result column="date" property="date"/>
+  </resultMap>
+
+  <select id="getAll" resultMap="TransferMap">
+    <![CDATA[
+    SELECT
+    t.id,
+    t.sum,
+    t.from_account_id,
+    t.to_account_id,
+    t.date
+    FROM transfer t
+    WHERE t.date <= #{beforeDate}
+    AND t.date >= #{afterDate}
+    ]]>
+  </select>
+
+  <select id="getById" resultMap="TransferMap">
+    SELECT
+    t.id,
+    t.sum,
+    t.from_account_id,
+    t.to_account_id,
+    t.date
+    FROM transfer t
+    WHERE t.id=#{transferId}
+  </select>
+
+  <insert id="createNew" parameterType="ru.finance.my.entity.Transfer">
+    <selectKey order="BEFORE" keyProperty="id" resultType="Long">
+      SELECT nextval('transfer_seq');
+    </selectKey>
+    INSERT INTO transfer(id, sum, from_account_id, to_account_id, date)
+    VALUES(#{id}, #{sum},  #{fromAccountId}, #{toAccountId}, #{date})
+  </insert>
+
+  <delete id="deleteById">
+    DELETE FROM transfer
+    WHERE id=#{transferId}
+  </delete>
+
+  <update id="update" parameterType="ru.finance.my.entity.Transfer">
+    UPDATE transfer SET
+    sum=#{sum},
+    from_account_id=#{fromAccountId},
+    to_account_id=#{toAccountId},
+    date=#{date}
+    WHERE id=#{id}
+  </update>
+</mapper>
