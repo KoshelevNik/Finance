@@ -22,8 +22,8 @@ public class TransferService {
     return transferRepository.getById(transferId);
   }
 
-  public List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate) {
-    return transferRepository.getAll(beforeDate, afterDate);
+  public List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate, Long userId) {
+    return transferRepository.getAll(beforeDate, afterDate, userId);
   }
 
   @Transactional(rollbackFor = Exception.class)

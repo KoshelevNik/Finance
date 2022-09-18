@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface TransferMapper {
 
-  List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate);
+  List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate, Long userId);
 
   void createNew(Transfer transfer);
 

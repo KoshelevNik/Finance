@@ -22,12 +22,13 @@ public class TransferController {
   @GetMapping
   public List<Transfer> getAll(
       @RequestParam("before-date") String beforeDate,
-      @RequestParam("after-date") String afterDate
+      @RequestParam("after-date") String afterDate,
+      @RequestParam("user-id") Long userId
   ) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     LocalDate before = LocalDate.parse(beforeDate, formatter);
     LocalDate after = LocalDate.parse(afterDate, formatter);
-    return transferService.getAll(before, after);
+    return transferService.getAll(before, after, userId);
   }
 
   @PostMapping

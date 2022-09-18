@@ -21,8 +21,10 @@
     t.to_account_id,
     t.date
     FROM transfer t
+    LEFT JOIN account a ON a.id = t.from_account_id
     WHERE t.date <= #{beforeDate}
     AND t.date >= #{afterDate}
+    AND a.user_id = #{userId}
     ]]>
   </select>
 

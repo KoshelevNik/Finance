@@ -14,8 +14,8 @@ public class TransferRepository {
   @Autowired
   private TransferMapper transferMapper;
 
-  public List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate) {
-    return transferMapper.getAll(beforeDate, afterDate);
+  public List<Transfer> getAll(LocalDate beforeDate, LocalDate afterDate, Long userId) {
+    return transferMapper.getAll(beforeDate, afterDate, userId);
   }
 
   public void createNew(Transfer transfer) {
