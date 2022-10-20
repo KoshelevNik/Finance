@@ -13,3 +13,5 @@
 ### Ссылки
 * [Swagger](https://app.swaggerhub.com/apis/N89050535317_1/Finance/1.0.0)
 * [Видеопрезентация](https://drive.google.com/file/d/1KFdLenTS68mybF8cI9YbLqJ2ymejUgzr/view?usp=sharing)
+* [Руководство по развертыванию](https://drive.google.com/file/d/140K-fBlVSTIHiAt9yxVrORmXcKQ3OjB8/view?usp=sharing)
+* [Ссылка на приложение](https://javaspringfinanceapp.herokuapp.com)
