@@ -14,6 +14,7 @@
 * [Swagger](https://app.swaggerhub.com/apis/N89050535317_1/Finance/1.0.0)
 * [Видеопрезентация](https://drive.google.com/file/d/1KFdLenTS68mybF8cI9YbLqJ2ymejUgzr/view?usp=sharing)
 * [Руководство по развертыванию](https://drive.google.com/file/d/140K-fBlVSTIHiAt9yxVrORmXcKQ3OjB8/view?usp=sharing)
+* [Технический обзор](https://drive.google.com/file/d/1as5nSRfFC5GKqcxlJQnpDIJybRozvee1/view?usp=sharing)
 * [Ссылка на приложение](https://javaspringfinanceapp.herokuapp.com)
 * [Trello](https://trello.com/invite/b/TCsvcVWy/ATTId222c7da42b4f01559f56078736ee72f5F1E3858/finance)
 * [Miro](https://miro.com/app/board/uXjVPLFvFyU=/?share_link_id=103691116269)
