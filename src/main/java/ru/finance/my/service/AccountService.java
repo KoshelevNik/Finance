@@ -12,6 +12,9 @@ import java.util.List;
 public class AccountService {
 
   @Autowired
+  private TransferService transferService;
+
+  @Autowired
   private AccountRepository accountRepository;
 
   @Autowired
@@ -42,6 +45,7 @@ public class AccountService {
 
   @Transactional(rollbackFor = Exception.class)
   public void deleteById(Long accountId) {
+    transferService.deleteAccount(accountId);
     expenseService.deleteAccount(accountId);
     incomeService.deleteAccount(accountId);
     accountRepository.deleteById(accountId);

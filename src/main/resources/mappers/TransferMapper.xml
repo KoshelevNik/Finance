@@ -21,10 +21,11 @@
     t.to_account_id,
     t.date
     FROM transfer t
-    LEFT JOIN account a ON a.id = t.from_account_id
+    LEFT JOIN account fa ON fa.id = t.from_account_id
+    LEFT JOIN account ta ON ta.id = t.to_account_id
     WHERE t.date <= #{beforeDate}
     AND t.date >= #{afterDate}
-    AND a.user_id = #{userId}
+    AND (fa.user_id = #{userId} OR ta.user_id = #{userId})
     ]]>
   </select>
 
@@ -59,5 +60,17 @@
     to_account_id=#{toAccountId},
     date=#{date}
     WHERE id=#{id}
+  </update>
+
+  <update id="clearFromAccountId">
+    UPDATE transfer SET
+    from_account_id=NULL
+    WHERE from_account_id=#{accountId}
+  </update>
+
+  <update id="clearToAccountId">
+    UPDATE transfer SET
+    to_account_id=NULL
+    WHERE to_account_id=#{accountId}
   </update>
 </mapper>

@@ -18,4 +18,8 @@ public interface TransferMapper {
   Transfer getById(Long transferId);
 
   void update(Transfer transfer);
+
+  void clearFromAccountId(Long accountId);
+
+  void clearToAccountId(Long accountId);
 }

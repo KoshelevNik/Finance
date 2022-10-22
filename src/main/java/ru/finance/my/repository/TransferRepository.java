@@ -33,4 +33,17 @@ public class TransferRepository {
   public void update(Transfer transfer) {
     transferMapper.update(transfer);
   }
+
+  private void clearFromAccountId(Long accountId) {
+    transferMapper.clearFromAccountId(accountId);
+  }
+
+  private void clearToAccountId(Long accountId) {
+    transferMapper.clearToAccountId(accountId);
+  }
+
+  public void deleteAccount(Long accountId) {
+    clearFromAccountId(accountId);
+    clearToAccountId(accountId);
+  }
 }

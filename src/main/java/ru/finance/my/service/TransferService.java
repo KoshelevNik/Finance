@@ -18,6 +18,10 @@ public class TransferService {
   @Autowired
   private AccountService accountService;
 
+  public void deleteAccount(Long accountId) {
+    transferRepository.deleteAccount(accountId);
+  }
+
   public Transfer getById(Long transferId) {
     return transferRepository.getById(transferId);
   }
