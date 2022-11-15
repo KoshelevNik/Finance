@@ -18,3 +18,5 @@
 * [Ссылка на приложение](https://javaspringfinanceapp.herokuapp.com)
 * [Trello](https://trello.com/invite/b/TCsvcVWy/ATTId222c7da42b4f01559f56078736ee72f5F1E3858/finance)
 * [Miro](https://miro.com/app/board/uXjVPLFvFyU=/?share_link_id=103691116269)
+* [Серверное приложение](https://github.com/KoshelevNik/FinanceServer)
+* [Клиентское приложение](https://github.com/KoshelevNik/FinanceFrontend)
